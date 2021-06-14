@@ -103,8 +103,8 @@
           </tbody>
         </table>
 
-        <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="exampleModalLabel"
-          aria-hidden="true" style="background: transparent !important;"> 
+        <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+          style="background: transparent !important;">
           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
             <div class="modal-content">
               <div class="modal-header" style="height: 20px;">
@@ -116,53 +116,47 @@
                   <div class="col-12">
                     <div class="form-floatingcol col s12">
                       <label>Personal</label>
-                      <select class="form-select form-select-sm">
+                      <select class="form-select form-select-sm" id="comboPersonal">
                         <option value="" selected>Seleccione Personal</option>
                         <option value="Femenino">Femenino</option>
                         <option value="Masculino">Masculino</option>
                       </select>
                     </div>
-
                     <div class="input-field col s4">
-                      <input type="text" id="dni" class="validate">
-                      <label for="nomape">DNI</label>
+                      <input type="number" id="dni" class="validate" minlength="8" maxlength="8">
+                      <label>DNI</label>
                     </div>
-
                     <div class="input-field col s4">
-                      <input type="text" id="nombres" class="validate">
-                      <label for="nomape">Nombres</label>
+                      <input type="text" id="nombres" class="validate" minlength="3" maxlength="20">
+                      <label>Nombres</label>
                     </div>
-
                     <div class="input-field col s4">
-                      <input type="text" id="apellidos" class="validate">
-                      <label for="nomape">Apellidos</label>
+                      <input type="text" id="apellidos" class="validate" minlength="3" maxlength="20">
+                      <label>Apellidos</label>
                     </div>
-
                   </div>
                   <div class="col-12">
                     <div class="input-field col s6">
-                      <input type="text" id="direccion" class="validate">
-                      <label for="nomape">Direccion</label>
+                      <input type="text" id="direccion" class="validate" maxlength="50">
+                      <label>Direccion</label>
                     </div>
 
                     <div class="input-field col s6">
-                      <input type="text" id="telefono" class="validate">
-                      <label for="nomape">Telefono</label>
+                      <input type="number" id="telefono" class="validate" minlength="7" maxlength="9">
+                      <label>Telefono</label>
                     </div>
 
                   </div>
                 </div>
               </div>
-
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-primary">Guardar</button>
               </div>
             </div>
-            </div>
-            
+          </div>
+
         </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
     </div>
   </div>

@@ -116,31 +116,31 @@
                   <div class="col-12">
                     <div class="form-floatingcol col s4">
                       <label>Tipo de Documento</label>
-                      <select class="form-select form-select-sm">
+                      <select class="form-select form-select-sm" id="comboTipoDoc">
                         <option value="" selected>Tipo de Documento</option>
                         <option value="Femenino">Femenino</option>
                         <option value="Masculino">Masculino</option>
                       </select>
                     </div>
                     <div class="input-field col s4">
-                      <input type="text" id="dni" class="validate">
-                      <label for="nomape">Nro Documento</label>
+                      <input type="text" id="dni" class="validate" minlength="8" maxlength="8">
+                      <label>Nro Documento</label>
                     </div>
                     <div class="input-field col s4">
-                      <input type="text" id="apellidos" class="validate">
-                      <label for="nomape">Nombres y Apellidos</label>
+                      <input type="text" id="apellidos" class="validate" minlength="5" maxlength="25">
+                      <label>Nombres y Apellidos</label>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="form-floatingcol col s4">
                       <label>Genero</label>
-                      <select class="form-select form-select-sm">
+                      <select class="form-select form-select-sm" id="comboGenero">
                         <option value="" selected>Seleccione el genero</option>
                         <option value="Femenino">Femenino</option>
                         <option value="Masculino">Masculino</option>
                       </select>
                     </div>
-                    <div class="form-floatingcol col s4">
+                    <div class="form-floatingcol col s4" id="comboEstadoCivil">
                       <label>Estado Civil</label>
                       <select class="form-select form-select-sm">
                         <option value="" selected>Seleccione Estado Civil</option>
@@ -151,18 +151,18 @@
                       </select>
                     </div>
                     <div class="col s4">
-                      <label for="nomape">Fecha de Nacimiento</label>
-                      <input type="date">
+                      <label>Fecha de Nacimiento</label>
+                      <input type="date" id="fechaNacimiento">
                     </div>
                   </div>
-                    <div class="col-12">
+                  <div class="col-12">
                     <div class="col s4">
-                      <label for="nomape">Fecha de Fallecimiento</label>
-                      <input type="date">
+                      <label>Fecha de Fallecimiento</label>
+                      <input type="date" id="fechaFallecimiento">
                     </div>
                     <div class="input-field col s4">
-                      <input type="text" id="lugarfa" class="validate">
-                      <label for="nomape">Lugar de Fallecimiento</label>
+                      <input type="text" id="lugarFallecimiento" class="validate" minlength="5" maxlength="25">
+                      <label>Lugar de Fallecimiento</label>
                     </div>
                   </div>
 
