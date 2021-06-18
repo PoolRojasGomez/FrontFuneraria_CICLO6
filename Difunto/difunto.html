@@ -53,7 +53,7 @@
                 <label for="nomape">Nombres/Apellidos:</label>
               </div>
               <div class="col s3">
-                <a class="waves-effect waves-light btn-small">Buscar</a>
+                <a class="waves-effect waves-light btn-small" id="btnBuscar">Buscar</a>
               </div>
             </div>
           </form>
@@ -63,43 +63,19 @@
           <thead class="table-dark">
             <tr>
               <th scope="col">#</th>
-              <th scope="col">DNI</th>
-              <th scope="col">Tipo de Documento</th>
+              <th scope="col">Doc. Identidad</th>
               <th scope="col">Nombres y Apellidos</th>
-              <th scope="col">Estado Civil</th>
+              <th scope="col">Sexo</th>
               <th scope="col">Fecha de Nacimiento</th>
-              <th scope="col">Fecha de fallecimiento</th>
               <th scope="col">Lugar de fallecimiento</th>
-              <th scope="col">Relacion</th>
+              <th scope="col">Lugar de fallecimiento</th>
+              <th scope="col">Imagen</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
+          <tbody id="cuerpoTabla">
+           
           </tbody>
         </table>
 
@@ -118,8 +94,8 @@
                       <label>Tipo de Documento</label>
                       <select class="form-select form-select-sm" id="comboTipoDoc">
                         <option value="" selected>Tipo de Documento</option>
-                        <option value="Femenino">Femenino</option>
-                        <option value="Masculino">Masculino</option>
+                        <option value="F">Femenino</option>
+                        <option value="M">Masculino</option>
                       </select>
                     </div>
                     <div class="input-field col s4">
@@ -173,7 +149,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
             </div>
           </div>
         </div>
@@ -191,6 +167,7 @@
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
     crossorigin="anonymous"></script>
   <script src="../Menu/menu.js"></script>
+  <script src="difunto.js"></script>
 
 
 </body>

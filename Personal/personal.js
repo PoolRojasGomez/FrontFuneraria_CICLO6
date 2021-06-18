@@ -33,8 +33,58 @@ function genera_tabla() {
   tabla.setAttribute("border", "2");
 }
 $(() => {
-  $('#btnAgregarPersonal').click(() =>{
-    fetch('https://funeraryapipablito.herokuapp.com/funeraria/api/swagger-ui.html#/staff-controller/getAllUsingGET_5').then(Response=> response.json())
-    .then(json => console.log(json))
+  const uri = "https://funeraryapipablito.herokuapp.com/funeraria/api/"
+
+  const tabla = $('#cuerpoTabla')
+  let numero = 1
+  let tablaHTML = ''
+  fetch(uri + 'workers/all')
+    .then(response => response.json())
+    .then(datos => {
+      let tablaf
+      for (let valor of datos) {
+        tablaf +=
+          llenaTabla(numero++, valor.staffId, valor.name, valor.lastName, valor.address, valor.phone,
+            valor.active.description, valor.salary, valor.position.name)
+
+      } return tabla.append(tablaf)
+    })
+    .catch(err => console.log(err.message));
+  $('#btnBuscar').click(() => {
+    tabla.empty()
+    const filtro = $('#nomape').val()
+    let numero = 1
+    let tablafi
+    fetch(uri + 'workers/filter/' + filtro)
+      .then(response => response.json())
+      .then(datosfiltro => {
+        console.log(filtro)
+        console.log(datosfiltro)
+        for (let valor of datosfiltro) {
+          tablafi = llenaTabla(numero, valor.staffId, valor.name, valor.lastName, valor.secondLastName, valor.gender.genderId, valor.address,
+            valor.district.name, valor.phone, valor.email, valor.position.name, valor.salary, valor.photo)
+        }
+        return tabla.append(tablafi)
+      }).catch(err => console.log(err.message));
   })
+
 })
+
+function llenaTabla(numero, id, name, lastName, address, phone, active, salary, position) {
+
+  tablaHTML = `<tr>
+  <td scope="row">${numero}</td>
+  <td>${id}</td>
+  <td>${name} ${lastName}</td>
+  <td>${address}</td>
+  <td>${phone}</td>
+  <td>${active}</td>
+  <td>${position}</td>
+  <td>S/.${salary}</td>
+  <td><img src="${photo}"/></td>
+  <td><button type="button" class="btn btn-success" onclick="">Editar</button></td>
+  <td><button type="button" class="btn btn-danger" onclick="">Eliminar</button></td>
+  </tr>
+  `
+  return tablaHTML
+}
