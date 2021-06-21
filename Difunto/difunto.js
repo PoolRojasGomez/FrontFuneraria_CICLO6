@@ -79,13 +79,15 @@ function llenaTabla(numero, typeIdentity, id, name, lastName, secondLastName, ge
                   <td>${dateofdeath}</td>
                   <td>${placeofdeath}</td>
                   <td><img src="${image}"/></td>
-                  <td><button type="button" class="btn btn-success" onclick="">Editar</button></td>
+                  <td><button type="button" class="btn btn-success" onclick="abrirModal()" >Editar</button></td>
                   <td><button type="button" class="btn btn-danger" onclick="">Eliminar</button></td>
                   </tr>
                   `
   return tablaHTML
 }
-
+function abrirModal(){
+  $('#modalRegistro').show();
+}
 function llenaTablaAll(uri, tabla) {
   fetch(uri + 'deceaseds/all')
     .then(response => response.json())
